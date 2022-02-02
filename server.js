@@ -10,7 +10,7 @@ const data =require('./data.json')
 const Blog = db.blog;
 
 db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync Db');
+  //console.log('Drop and Resync Db');
   initial();
 });
 
@@ -20,11 +20,7 @@ const initial = ()=>{
   }
 }
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.json());
 
